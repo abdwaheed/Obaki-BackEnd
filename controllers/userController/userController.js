@@ -116,7 +116,7 @@ async function createUser(req, res) {
       to: email,
       subject: 'Email Verification',
       text: `Below is Your Email Verification Link
-            http://16.171.56.109:8081/verify/${token}
+            http://13.48.6.148:8081/verify/${token}
              Thanks`
   };
 
