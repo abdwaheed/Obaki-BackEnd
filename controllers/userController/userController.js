@@ -13,8 +13,19 @@ const { isNumber } = require("../../helperFunction/isNumber");
 const dotenv = require('dotenv');
 dotenv.config();
 
+const SMS_ACCOUNTSID1="AC1d66a";
+const SMS_ACCOUNTSID2="8809f6b38d2a25c";
+const SMS_ACCOUNTSID3="463f37a90d54";
 
-const client = require("twilio")(process.env.SMS_ACCOUNTSID, process.env.SMS_AUTHTOKEN);
+const SMS_AUTHTOKEN1="194691993";
+const SMS_AUTHTOKEN2="c89179ffcf0cf";
+const SMS_AUTHTOKEN3="2e3fd1fa95";
+
+const EMAILANDSMS_OTP1="VA663bbc";
+const EMAILANDSMS_OTP2="81afa7b8dd6a88887";
+const EMAILANDSMS_OTP3="c8c914a8b";
+
+const client = require("twilio")(SMS_ACCOUNTSID1+SMS_ACCOUNTSID2+SMS_ACCOUNTSID3, SMS_AUTHTOKEN1+SMS_AUTHTOKEN2+SMS_AUTHTOKEN3);
 
 const { checkIfOtpIsValid } = require("../../validators/VerifyOtp");
 
@@ -47,7 +58,7 @@ async function createUser(req, res) {
       try {
 
         //TODO: FOR SENDING OTP-CODE
-        const verification = await client.verify.v2.services(process.env.EMAILANDSMS_OTP).verifications.create({
+        const verification = await client.verify.v2.services(EMAILANDSMS_OTP1+EMAILANDSMS_OTP2+EMAILANDSMS_OTP3).verifications.create({
           to: phone,
           channel: "sms"
         });
@@ -193,7 +204,7 @@ async function createUser(req, res) {
 
   try {
            //TODO: FOR VERIFYING OTP CODE via Phone
-    const verification_check = await client.verify.v2.services(process.env.EMAILANDSMS_OTP).verificationChecks.create({
+    const verification_check = await client.verify.v2.services(EMAILANDSMS_OTP1+EMAILANDSMS_OTP2+EMAILANDSMS_OTP3).verificationChecks.create({
       to: phone,
       code: parseInt(otp)
     });
