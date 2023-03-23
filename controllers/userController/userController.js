@@ -10,8 +10,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { isNumber } = require("../../helperFunction/isNumber");
 
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 
 const SMS_ACCOUNTSID1="AC1d66a";
 const SMS_ACCOUNTSID2="8809f6b38d2a25c";
