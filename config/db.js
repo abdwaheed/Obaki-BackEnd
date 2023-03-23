@@ -3,8 +3,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 mongoose.Promise = global.Promise;
 
+const MONGO_URI1="mongodb+srv:"
+const MONGO_URI2="//waheed:obaki123@cluster0."
+const MONGO_URI3="ftz6h3k.mongodb.net/test"
+
 // Connecting to the database
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(MONGO_URI1+MONGO_URI2+MONGO_URI3, {
     useNewUrlParser: true,
     useFindAndModify:false,
     useUnifiedTopology: true,
