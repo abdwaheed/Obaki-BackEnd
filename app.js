@@ -12,7 +12,8 @@ global.failStatus = 401;
 global.SessionExpireStatus = 500;
 global.CURRENCY = '$';
 var apiRouter = require('./routes/api');
-
+// const dotenv = require('dotenv');
+// dotenv.config();
 var app = express();
 
 // view engine setup

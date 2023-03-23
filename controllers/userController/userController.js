@@ -6,23 +6,15 @@ var User = require('../../models/Users');
 const { checkIfCreateUserIsValid } = require("../../validators/UserValidator");
 const myMiddleware  =  require("../../middleware/new");
 
-const controller = 'Users';
-const module_name = 'Users';
-
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { isNumber } = require("../../helperFunction/isNumber");
-const saltRounds = 10;
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 
-const accountSid = "AC8970ef3164027deb9b126f78b1607d8c";
-const authToken = "92d199566f1d88cc09feab16e6d79b41";
-
-const verifySid = "VA9c36e0ced1c46bc4065f0d6f38de11bf";
-const sgMail = require('@sendgrid/mail');
-// sgMail.setApiKey('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');
-//sendgrid api key   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
-const client = require("twilio")(accountSid, authToken);
+const client = require("twilio")(process.env.SMS_ACCOUNTSID, process.env.SMS_AUTHTOKEN);
 
 const { checkIfOtpIsValid } = require("../../validators/VerifyOtp");
 
@@ -55,7 +47,7 @@ async function createUser(req, res) {
       try {
 
         //TODO: FOR SENDING OTP-CODE
-        const verification = await client.verify.v2.services("VAb53ca8e605d86b38ccaba377e08a444d").verifications.create({
+        const verification = await client.verify.v2.services(process.env.EMAILANDSMS_OTP).verifications.create({
           to: phone,
           channel: "sms"
         });
@@ -113,7 +105,7 @@ async function createUser(req, res) {
       to: email,
       subject: 'Email Verification',
       text: `Below is Your Email Verification Link
-             http://localhost:8083/verify/${token}
+            http://16.171.56.109:8083/verify/${token}
              Thanks`
   };
 
@@ -201,7 +193,7 @@ async function createUser(req, res) {
 
   try {
            //TODO: FOR VERIFYING OTP CODE via Phone
-    const verification_check = await client.verify.v2.services("VAb53ca8e605d86b38ccaba377e08a444d").verificationChecks.create({
+    const verification_check = await client.verify.v2.services(process.env.EMAILANDSMS_OTP).verificationChecks.create({
       to: phone,
       code: parseInt(otp)
     });

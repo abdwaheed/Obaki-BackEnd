@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-
+const dotenv = require('dotenv');
+dotenv.config();
 mongoose.Promise = global.Promise;
-global.url = 'mongodb+srv://waheed:obaki123@cluster0.ftz6h3k.mongodb.net/test';
-
 
 // Connecting to the database
-mongoose.connect(url, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useFindAndModify:false,
     useUnifiedTopology: true,
