@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-dotenv.config();
+// const dotenv = require('dotenv');
+// dotenv.config();
 mongoose.Promise = global.Promise;
 
 const MONGO_URI1="mongodb+srv:"
