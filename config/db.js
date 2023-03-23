@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-global.url = 'mongodb://127.0.0.1:27017/test';
+global.url = 'mongodb+srv://waheed:obaki123@cluster0.ftz6h3k.mongodb.net/test';
 
 
 // Connecting to the database
