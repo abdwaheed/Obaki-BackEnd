@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"xyz@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"waheed.2ndyearelegant@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -55,7 +55,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"xyz@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
+							"raw": "{\r\n    \"email\" : \"waheed.2ndyearelegant@gmail.com\",\r\n    \"password\": \"asadA12@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"phone\" : \"+923452344354\",\r\n    \"otp\" : \"389104\"\r\n}",
+							"raw": "{\r\n    \"phone\" : \"+12087444184\",\r\n    \"otp\" : \"396823\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,6 +95,349 @@
 							],
 							"path": [
 								"verifyOtp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant Or House",
+			"item": [
+				{
+					"name": "Get RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isHouse\": true,\r\n    \"location\":\"{{$randomStreetAddress}}\",\r\n    \"address\":\"{{$randomStreetAddress}}\",\r\n    \"city\":\"{{$randomCity}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipCode\":\"{{zipCode}}\",\r\n    \"image\":\"{{$randomAvatarImage}}\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isHouse\": true,\r\n    \"location\":\"{{$randomStreetAddress}}\",\r\n    \"address\":\"{{$randomStreetAddress}}\",\r\n    \"city\":\"{{$randomCity}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"zipCode\":\"{{zipCode}}\",\r\n    \"image\":\"{{$randomAvatarImage}}\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete RestaurantHouse",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantHouse",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantHouse"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chef",
+			"item": [
+				{
+					"name": "Get All Chefs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/allchefs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"allchefs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":\"{{$randomFoodImage}}\",\r\n    \"foodType\":\"{{randomFoodImage}}\",\r\n    \"dietaryType\":\"{{$randomFoodImage}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6420be86e2acaa39b812a694\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomNameSuffix}}\",\r\n    \"country\":\"{{$randomCountry}}\",\r\n    \"state\":\"{{$randomStreetAddress}}\",\r\n    \"experience\": \"3\",\r\n    \"foodCountry\":\"{{$randomFoodImage}}\",\r\n    \"foodType\":\"{{randomFoodImage}}\",\r\n    \"dietaryType\":\"{{$randomFoodImage}}\",\r\n    \"description\":\"{{$randomJobDescriptor}}\",\r\n    \"dishImage\": [\"{{$randomImageDataUri}}\",\"{{$randomImageDataUri}}\"],\r\n    \"certificate\":\"{{$randomImageUrl}}\",\r\n    \"restaurantHouse\":\"6420be86e2acaa39b812a694\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Chef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/chef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"chef"
 							]
 						}
 					},
@@ -192,7 +535,7 @@
 		},
 		{
 			"key": "baseUrl",
-			"value": "localhost:8083",
+			"value": "localhost:8081",
 			"type": "default"
 		},
 		{

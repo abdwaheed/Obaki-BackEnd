@@ -94,7 +94,7 @@ async function createUser(req, res) {
       return res.status(400).send({
         success : false,
         message: "User Already Exist. Please Login",
-        errorCode: 409,
+        errorCode: 400,
       });
     }
     const transporter = nodemailer.createTransport({
@@ -116,7 +116,7 @@ async function createUser(req, res) {
       to: email,
       subject: 'Email Verification',
       text: `Below is Your Email Verification Link
-            http://13.48.6.148:8081/verify/${token}
+            http://localhost:8081/verify/${token}
              Thanks`
   };
 
@@ -149,7 +149,7 @@ async function createUser(req, res) {
       return res.status(400).send({
         success : false,
         message: "User Already Exist. Please Login",
-        errorCode: 409,
+        errorCode: 400,
       });
     }
      sendOtp();
@@ -256,9 +256,6 @@ async function createUser(req, res) {
  exports.verifyOtp = verifyOtp;
 
 
-
-
-
  async function login(req, res) {
   try {
 
@@ -313,7 +310,7 @@ async function createUser(req, res) {
     return res.status(400).send({
       success : false,
       message: "Invalid Credentials",
-      errorCode : 409
+      errorCode : 400
     });
   } catch (error) {
   //  console.log("error");

@@ -8,7 +8,7 @@ const MONGO_URI2="//waheed:obaki123@cluster0."
 const MONGO_URI3="ftz6h3k.mongodb.net/test"
 
 // Connecting to the database
-mongoose.connect(MONGO_URI1+MONGO_URI2+MONGO_URI3, {
+mongoose.connect("mongodb://127.0.0.1:27017", {
     useNewUrlParser: true,
     useFindAndModify:false,
     useUnifiedTopology: true,
